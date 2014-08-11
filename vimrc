@@ -37,6 +37,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'bling/vim-airline'
 " Vim bufferline
 Plugin 'bling/vim-bufferline'
+" Vimproc (required by unite)
+Plugin 'Shougo/vimproc.vim'
 " unite
 Plugin 'Shougo/unite.vim'
 " multiple-cursors
@@ -187,6 +189,13 @@ let g:tagbar_autofocus = 1
 " --- Evervim {
 map <leader>el :EvervimNotebookList<CR>
 map <leader>ec :EvervimCreateNote<CR>
+"  }
+" --- Unite {
+" let g:unite_source_history_yank_enable = 1
+" nnoremap <C-y> :Unite history/yank<cr>
+nnoremap <leader>uf :Unite -start-insert file_rec/async<cr>
+nnoremap <leader>ug :Unite grep:.<cr>
+nnoremap <leader>ub :Unite -quick-match -start-insert buffer<cr>
 "  }
 
 "--------------------------------------------------------------------------- 
