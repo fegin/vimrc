@@ -1,0 +1,4 @@
+vimrc
+=====
+
+Fegin's vimrc
