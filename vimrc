@@ -145,9 +145,9 @@ vnoremap > >gv
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
 
-" Save file
-map <C-w> <esc>:w<CR>
-imap <C-w> <esc>:w<CR>
+" Save file (This require disabling terimal's CTRL-S interpretation.)
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
 
 "--------------------------------------------------------------------------- 
 " ENCODING SETTINGS
@@ -184,18 +184,22 @@ nnoremap <silent> <F7> :TagbarToggle<CR>
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
 "}
+" --- Evervim {
+map <leader>el :EvervimNotebookList<CR>
+map <leader>ec :EvervimCreateNote<CR>
+"  }
 
 "--------------------------------------------------------------------------- 
 " Others
 "--------------------------------------------------------------------------- 
 " Color Scheme
 set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 1
-colorscheme solarized
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+" let g:solarized_termcolors = 256
+" let g:solarized_termtrans = 1
+" colorscheme solarized
 " colorscheme wombat256
-" colorscheme candy
+colorscheme candy
 " Source the private data
 source ~/.vim/vimrc_private
