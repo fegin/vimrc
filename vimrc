@@ -1,4 +1,9 @@
 "--------------------------------------------------------------------------- 
+" System variables
+"--------------------------------------------------------------------------- 
+let hostname = substitute(system('hostname'), '\n', '', '')
+
+"--------------------------------------------------------------------------- 
 " Vundle/Plugins installation
 "--------------------------------------------------------------------------- 
 """ For Vundle and all other plugins installation.
@@ -28,7 +33,9 @@ Plugin 'majutsushi/tagbar'
 " Tabular
 Plugin 'godlygeek/tabular'
 " YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+if hostname !~ 'beaker' " Disable this on the cluster.
+  Plugin 'Valloric/YouCompleteMe'
+endif
 " Syntastic
 Plugin 'scrooloose/syntastic'
 " Vim-Snippets
