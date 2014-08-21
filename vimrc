@@ -29,6 +29,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
+" Syntastic
+Plugin 'scrooloose/syntastic'
 " Vim-Snippets
 Plugin 'honza/vim-snippets'
 " UltiSnips (another snippet engine, seems to support YouCompleteMe)
@@ -90,13 +92,28 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-" TAB setting{
-   set expandtab        "replace <TAB> with spaces
-   set softtabstop=4 
-   set shiftwidth=4
-   au FileType Makefile set noexpandtab
+"--------------------------------------------------------------------------- 
+" LANGUAGE SPECIFIC Settings
+"--------------------------------------------------------------------------- 
+" --- General {
+set expandtab        "replace <TAB> with spaces
+set softtabstop=4
+set shiftwidth=4
 "}                              
+"
+" --- Python {
+autocmd FileType python,pyrex setlocal tabstop=2
+autocmd FileType python,pyrex setlocal softtabstop=2
+autocmd FileType python,pyrex setlocal shiftwidth=2
+" }
+" --- Makefile {
+autocmd FileType Makefile set noexpandtab
+" }
 
+" --- CTAGS {
+nmap <silent><F1> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . && cscope -bR<CR>
+nmap <silent><F2> :!ctags -R .<CR>
+"  }
 "--------------------------------------------------------------------------- 
 " USEFUL SHORTCUTS
 "--------------------------------------------------------------------------- 
@@ -114,15 +131,15 @@ map <leader>cx :cn<CR>
 map <leader>cp :cp<CR>
 " --- move around splits {
 " move to and maximize the below split 
-map <C-J> <C-W>j<C-W>_
+"map <C-J> <C-W>j<C-W>_
 " move to and maximize the above split 
-map <C-K> <C-W>k<C-W>_
+"map <C-K> <C-W>k<C-W>_
 " move to and maximize the left split 
-nmap <c-h> <c-w>h<c-w><bar>
+"nmap <c-h> <c-w>h<c-w><bar>
 " move to and maximize the right split  
-nmap <c-l> <c-w>l<c-w><bar>
-set wmw=0                     " set the min width of a window to 0 so we can maximize others 
-set wmh=0                     " set the min height of a window to 0 so we can maximize others
+"nmap <c-l> <c-w>l<c-w><bar>
+"set wmw=0                     " set the min width of a window to 0 so we can maximize others 
+"set wmh=0                     " set the min height of a window to 0 so we can maximize others
 " }
 
 " move around tabs. conflict with the original screen top/bottom
@@ -132,11 +149,13 @@ map <S-H> gT
 " go to next tab
 map <S-L> gt
 " new tab
+map <C-t><C-r> :tablast<CR>
+" new tab
 map <C-t><C-t> :tabnew<CR>
 " close tab
 map <C-t><C-w> :tabclose<CR> 
 " ,/ turn off search highlighting
-nmap <leader>/ :nohl<CR>
+map <C-l> :nohl<CR>
 " ,p toggles paste mode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
@@ -193,10 +212,22 @@ map <leader>ec :EvervimCreateNote<CR>
 " --- Unite {
 " let g:unite_source_history_yank_enable = 1
 " nnoremap <C-y> :Unite history/yank<cr>
-nnoremap <leader>uf :Unite -start-insert file_rec/async<cr>
-nnoremap <leader>ug :Unite grep:.<cr>
-nnoremap <leader>ub :Unite -quick-match -start-insert buffer<cr>
+nnoremap <leader>jf :Unite -start-insert file_rec<CR>
+nnoremap <leader>jF :Unite -start-insert file_rec/async<CR>
+nnoremap <leader>jg :Unite grep:.<CR>
+nnoremap <leader>jb :Unite -quick-match -start-insert buffer<CR>
 "  }
+"  --- YouCompleteMe {
+let g:ycm_confirm_extra_conf=0
+let g:ycm_autoclose_preview_window_after_completion=0
+nnoremap <leader>kg ::YcmCompleter GoToDefinitionElseDeclaration<CR>
+" }
+"
+" --- Syntastic {
+let g:ycm_show_diagnostics_ui = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+" }
 
 "--------------------------------------------------------------------------- 
 " Others
