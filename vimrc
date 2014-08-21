@@ -221,7 +221,7 @@ nnoremap <leader>jb :Unite -quick-match -start-insert buffer<CR>
 "  }
 "  --- YouCompleteMe {
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>kg ::YcmCompleter GoToDefinitionElseDeclaration<CR>
 " }
 " --- Syntastic {
