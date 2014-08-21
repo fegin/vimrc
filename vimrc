@@ -47,6 +47,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'flazz/vim-colorschemes'
 " Evernote plugin
 Plugin 'kakkyz81/evervim'
+" Python-mode
+Plugin 'klen/python-mode'
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
@@ -174,29 +176,33 @@ let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 set laststatus=2
-"}
+" }
 "--- UltiSnips {
 let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"}
+" }
 " --- TagBar {
 " toggle TagBar with F7
 nnoremap <silent> <F7> :TagbarToggle<CR> 
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
-"}
+" }
 " --- Evervim {
 map <leader>el :EvervimNotebookList<CR>
 map <leader>ec :EvervimCreateNote<CR>
-"  }
+" }
 " --- Unite {
 " let g:unite_source_history_yank_enable = 1
 " nnoremap <C-y> :Unite history/yank<cr>
 nnoremap <leader>uf :Unite -start-insert file_rec/async<cr>
 nnoremap <leader>ug :Unite grep:.<cr>
 nnoremap <leader>ub :Unite -quick-match -start-insert buffer<cr>
-"  }
+" }
+" --- Python-mode {
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion = 0
+" }
 
 "--------------------------------------------------------------------------- 
 " Others
