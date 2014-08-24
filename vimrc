@@ -58,6 +58,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'kakkyz81/evervim'
 " Python-mode
 Plugin 'klen/python-mode'
+" Language Tool
+Plugin 'vim-scripts/LanguageTool'
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
