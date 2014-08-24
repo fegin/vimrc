@@ -58,6 +58,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'kakkyz81/evervim'
 " Python-mode
 Plugin 'klen/python-mode'
+" SWTC
+Plugin 'shinokada/SWTC.vim'
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
@@ -239,6 +241,10 @@ let g:syntastic_enable_signs = 1
 " --- Python-mode {
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
+" }
+
+" --- SWTC {
+nnoremap <leader>,swtc :set norelativenumber<CR>:set nonumber<CR>:SWTC ~/.vim/bundle/SWTC.vim/intro.swtc<CR>
 " }
 
 "--------------------------------------------------------------------------- 
