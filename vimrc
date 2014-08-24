@@ -60,6 +60,8 @@ Plugin 'kakkyz81/evervim'
 Plugin 'klen/python-mode'
 " SWTC
 Plugin 'shinokada/SWTC.vim'
+" Language Tool
+Plugin 'vim-scripts/LanguageTool'
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
