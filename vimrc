@@ -112,6 +112,12 @@ set tm=500
 set expandtab        "replace <TAB> with spaces
 set softtabstop=4
 set shiftwidth=4
+
+"folding settings
+set foldmethod=syntax   "fold based on syntax 
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 "}                              
 "
 " --- Python {
@@ -248,6 +254,7 @@ let g:pymode_rope_completion = 0
 " --- SWTC {
 nnoremap <leader>,swtc :set norelativenumber<CR>:set nonumber<CR>:SWTC ~/.vim/bundle/SWTC.vim/intro.swtc<CR>
 " }
+let g:languagetool_jar = "~/workspace/LanguageTool-2.6/languagetool-commandline.jar"
 
 "--------------------------------------------------------------------------- 
 " Misc
