@@ -231,6 +231,11 @@ map <leader>ec :EvervimCreateNote<CR>
 " --- Unite {
 " let g:unite_source_history_yank_enable = 1
 " nnoremap <C-y> :Unite history/yank<cr>
+if executable('ack-grep')
+    let g:unite_source_grep_command = 'ack-grep'
+    let g:unite_source_grep_default_opts = '-i --no-heading --no-color -k -H'
+    let g:unite_source_grep_recursive_opt = ''
+endif
 nnoremap <leader>jf :Unite -start-insert file_rec<CR>
 nnoremap <leader>jF :Unite -start-insert file_rec/async<CR>
 nnoremap <leader>jg :Unite grep:.<CR>
@@ -249,6 +254,7 @@ let g:syntastic_enable_signs = 1
 " --- Python-mode {
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
+let g:pymode_lint_ignore = "E111,E114,E116,E265,E501,E701,W0611,W0612"
 " }
 
 " --- SWTC {
