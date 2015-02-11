@@ -37,7 +37,7 @@ if hostname !~ 'beaker' " Disable this on the cluster.
   Plugin 'Valloric/YouCompleteMe'
 endif
 " Syntastic
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 " Vim-Snippets
 Plugin 'honza/vim-snippets'
 " UltiSnips (another snippet engine, seems to support YouCompleteMe)
@@ -62,6 +62,8 @@ Plugin 'klen/python-mode'
 Plugin 'shinokada/SWTC.vim'
 " Language Tool
 Plugin 'vim-scripts/LanguageTool'
+" Local vimrc
+Plugin 'embear/vim-localvimrc'
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
@@ -254,13 +256,19 @@ let g:syntastic_enable_signs = 1
 " --- Python-mode {
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
-let g:pymode_lint_ignore = "E111,E114,E116,E265,E501,E701,W0611,W0612"
+let g:pymode_lint_ignore = "E111,E114,E116,E265,E501,E701,W0611,W0612,C901"
+let g:pymode_options=0
+let g:pymode_options_max_line_length = 99
 " }
 
 " --- SWTC {
 nnoremap <leader>,swtc :set norelativenumber<CR>:set nonumber<CR>:SWTC ~/.vim/bundle/SWTC.vim/intro.swtc<CR>
 " }
 let g:languagetool_jar = "~/workspace/LanguageTool-2.6/languagetool-commandline.jar"
+
+" --- Local vimrc {
+let g:localvimrc_ask = 0
+"  }
 
 "--------------------------------------------------------------------------- 
 " Misc
