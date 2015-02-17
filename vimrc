@@ -123,9 +123,9 @@ set foldlevel=1         "this is just what i use
 "}                              
 "
 " --- Python {
-autocmd FileType python,pyrex setlocal tabstop=2
-autocmd FileType python,pyrex setlocal softtabstop=2
-autocmd FileType python,pyrex setlocal shiftwidth=2
+autocmd FileType python,pyrex setlocal tabstop=4
+autocmd FileType python,pyrex setlocal softtabstop=4
+autocmd FileType python,pyrex setlocal shiftwidth=4
 " }
 " --- Makefile {
 autocmd FileType Makefile set noexpandtab
