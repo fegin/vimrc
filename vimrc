@@ -20,8 +20,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" fugitive
-"Plugin 'tpope/vim-fugitive'
 " NerdTree
 Plugin 'scrooloose/nerdtree'
 " EasyMotion
@@ -32,16 +30,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 " Tabular
 Plugin 'godlygeek/tabular'
-" YouCompleteMe
-if hostname !~ 'beaker' " Disable this on the cluster.
-  Plugin 'Valloric/YouCompleteMe'
-endif
 " Syntastic
-" Plugin 'scrooloose/syntastic'
-" Vim-Snippets
-Plugin 'honza/vim-snippets'
-" UltiSnips (another snippet engine, seems to support YouCompleteMe)
-Plugin 'SirVer/ultisnips'
+Plugin 'scrooloose/syntastic'
 " Vim airline
 Plugin 'bling/vim-airline'
 " Vim bufferline
@@ -54,16 +44,16 @@ Plugin 'Shougo/unite.vim'
 Plugin 'terryma/vim-multiple-cursors'
 " Color schemems
 Plugin 'flazz/vim-colorschemes'
-" Evernote plugin
-Plugin 'kakkyz81/evervim'
 " Python-mode
 Plugin 'klen/python-mode'
-" SWTC
-Plugin 'shinokada/SWTC.vim'
 " Language Tool
 Plugin 'vim-scripts/LanguageTool'
 " Local vimrc
 Plugin 'embear/vim-localvimrc'
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+" fugitive
+Plugin 'tpope/vim-fugitive'
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
@@ -75,6 +65,14 @@ Plugin 'embear/vim-localvimrc'
 " Plugin 'mileszs/ack.vim'
 " SuperTab
 " Plugin 'ervandew/supertab'
+" SWTC
+" Plugin 'shinokada/SWTC.vim'
+" Evernote plugin
+" Plugin 'kakkyz81/evervim'
+" Vim-Snippets
+" Plugin 'honza/vim-snippets'
+" UltiSnips (another snippet engine, seems to support YouCompleteMe)
+" Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -203,6 +201,9 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 "--------------------------------------------------------------------------- 
 " Plugin SETTINGS
 "--------------------------------------------------------------------------- 
+"--- NerdTree {
+map <C-d> :NERDTreeToggle<CR>
+" }
 "--- Airline {
 "Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -226,10 +227,6 @@ nnoremap <silent> <F7> :TagbarToggle<CR>
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
 " }
-" --- Evervim {
-map <leader>el :EvervimNotebookList<CR>
-map <leader>ec :EvervimCreateNote<CR>
-" }
 " --- Unite {
 " let g:unite_source_history_yank_enable = 1
 " nnoremap <C-y> :Unite history/yank<cr>
@@ -246,12 +243,11 @@ nnoremap <leader>jb :Unite -quick-match -start-insert buffer<CR>
 "  --- YouCompleteMe {
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
-nnoremap <leader>kg ::YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>jd ::YcmCompleter GoToDefinitionElseDeclaration<CR>
 " }
 " --- Syntastic {
+let g:syntastic_check_on_open = 0
 let g:ycm_show_diagnostics_ui = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_enable_signs = 1
 " }
 " --- Python-mode {
 let g:pymode_rope_complete_on_dot = 0
@@ -260,15 +256,11 @@ let g:pymode_lint_ignore = "E111,E114,E116,E265,E501,E701,W0611,W0612,C901"
 let g:pymode_options=0
 let g:pymode_options_max_line_length = 99
 " }
-
-" --- SWTC {
-nnoremap <leader>,swtc :set norelativenumber<CR>:set nonumber<CR>:SWTC ~/.vim/bundle/SWTC.vim/intro.swtc<CR>
-" }
-let g:languagetool_jar = "~/workspace/LanguageTool-2.6/languagetool-commandline.jar"
-
 " --- Local vimrc {
 let g:localvimrc_ask = 0
 "  }
+let g:languagetool_jar = "~/workspace/LanguageTool-2.6/languagetool-commandline.jar"
+
 
 "--------------------------------------------------------------------------- 
 " Misc
