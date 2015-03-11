@@ -248,6 +248,7 @@ nnoremap <leader>jd ::YcmCompleter GoToDefinitionElseDeclaration<CR>
 " --- Syntastic {
 let g:syntastic_check_on_open = 0
 let g:ycm_show_diagnostics_ui = 0
+let g:syntastic_enable_signs = 1
 " }
 " --- Python-mode {
 let g:pymode_rope_complete_on_dot = 0
