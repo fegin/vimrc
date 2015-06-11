@@ -45,7 +45,7 @@ Plugin 'terryma/vim-multiple-cursors'
 " Color schemems
 Plugin 'flazz/vim-colorschemes'
 " Python-mode
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 " Language Tool
 Plugin 'vim-scripts/LanguageTool'
 " Local vimrc
@@ -54,6 +54,15 @@ Plugin 'embear/vim-localvimrc'
 Plugin 'Valloric/YouCompleteMe'
 " fugitive
 Plugin 'tpope/vim-fugitive'
+
+" Mac only plugins
+if has("unix")
+    let s:uname = substitute(system("uname -s"), '\n', '', '')
+    if s:uname == "Darwin"
+        " vim-mediawiki-editor
+        Plugin 'aquach/vim-mediawiki-editor'
+    endif
+endif
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
@@ -261,6 +270,11 @@ let g:pymode_options_max_line_length = 99
 let g:localvimrc_ask = 0
 "  }
 let g:languagetool_jar = "~/workspace/LanguageTool-2.6/languagetool-commandline.jar"
+" --- vim-mediawiki-editor {
+let g:mediawiki_editor_url = "localhost:8888"
+let g:mediawiki_editor_username = "fegin"
+let g:mediawiki_editor_password = "feginwiki"
+"  }
 
 
 "--------------------------------------------------------------------------- 
