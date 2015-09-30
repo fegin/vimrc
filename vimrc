@@ -51,7 +51,9 @@ Plugin 'vim-scripts/LanguageTool'
 " Local vimrc
 Plugin 'embear/vim-localvimrc'
 " YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+if ! hostname =~ "beaker" && hostname =~ "geeker"
+    Plugin 'Valloric/YouCompleteMe'
+endif
 " fugitive
 Plugin 'tpope/vim-fugitive'
 
