@@ -31,7 +31,7 @@ Plugin 'majutsushi/tagbar'
 " Tabular
 Plugin 'godlygeek/tabular'
 " Syntastic
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 " Vim airline
 Plugin 'bling/vim-airline'
 " Vim bufferline
@@ -264,7 +264,7 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
 let g:pymode_lint_ignore = "E111,E114,E116,E265,E501,E701,W0611,W0612,C901"
 let g:pymode_options=0
-let g:pymode_options_max_line_length = 99
+let g:pymode_options_max_line_length = 100
 " }
 " --- Local vimrc {
 let g:localvimrc_ask = 0
