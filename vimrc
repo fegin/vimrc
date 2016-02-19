@@ -56,13 +56,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 
 " Mac only plugins
-if has("unix")
-    let s:uname = substitute(system("uname -s"), '\n', '', '')
-    if s:uname == "Darwin"
-        " vim-mediawiki-editor
-        Plugin 'aquach/vim-mediawiki-editor'
-    endif
-endif
+"if has("unix")
+    "let s:uname = substitute(system("uname -s"), '\n', '', '')
+    "if s:uname == "Darwin"
+        "" vim-mediawiki-editor
+        "Plugin 'aquach/vim-mediawiki-editor'
+    "endif
+"endif
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
