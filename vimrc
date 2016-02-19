@@ -55,16 +55,16 @@ if ! hostname =~ "beaker" && hostname =~ "geeker"
     Plugin 'Valloric/YouCompleteMe'
 endif
 " fugitive
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 
 " Mac only plugins
-if has("unix")
-    let s:uname = substitute(system("uname -s"), '\n', '', '')
-    if s:uname == "Darwin"
-        " vim-mediawiki-editor
-        Plugin 'aquach/vim-mediawiki-editor'
-    endif
-endif
+"if has("unix")
+    "let s:uname = substitute(system("uname -s"), '\n', '', '')
+    "if s:uname == "Darwin"
+        "" vim-mediawiki-editor
+        "Plugin 'aquach/vim-mediawiki-editor'
+    "endif
+"endif
 
 " ctrlp
 " Plugin 'kien/ctrlp.vim'
@@ -246,8 +246,8 @@ if executable('ack-grep')
     let g:unite_source_grep_default_opts = '-i --no-heading --no-color -k -H'
     let g:unite_source_grep_recursive_opt = ''
 endif
-nnoremap <leader>jf :Unite -start-insert file_rec<CR>
-nnoremap <leader>jF :Unite -start-insert file_rec/async<CR>
+nnoremap <leader>jF :Unite -start-insert file_rec<CR>
+nnoremap <leader>jf :Unite -start-insert file_rec/async<CR>
 nnoremap <leader>jg :Unite grep:.<CR>
 nnoremap <leader>jb :Unite -quick-match -start-insert buffer<CR>
 "  }
