@@ -51,9 +51,7 @@ Plugin 'vim-scripts/LanguageTool'
 " Local vimrc
 Plugin 'embear/vim-localvimrc'
 " YouCompleteMe
-if ! hostname =~ "beaker" && hostname =~ "geeker"
-    Plugin 'Valloric/YouCompleteMe'
-endif
+"Plugin 'Valloric/YouCompleteMe'
 " fugitive
 " Plugin 'tpope/vim-fugitive'
 
@@ -246,14 +244,16 @@ if executable('ack-grep')
     let g:unite_source_grep_default_opts = '-i --no-heading --no-color -k -H'
     let g:unite_source_grep_recursive_opt = ''
 endif
+"call unite#custom#source('file_rec/async,file', 'ignore_pattern', 'bower_components\|dist\|fonts\|node_modules\|maps\|\.pyc$\|\.a$\|\.o$\|\.so$')
 nnoremap <leader>jF :Unite -start-insert file_rec<CR>
-nnoremap <leader>jf :Unite -start-insert file_rec/async<CR>
+nnoremap <leader>jf :Unite -start-insert file_rec/git<CR>
 nnoremap <leader>jg :Unite grep:.<CR>
 nnoremap <leader>jb :Unite -quick-match -start-insert buffer<CR>
 "  }
 "  --- YouCompleteMe {
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>jd ::YcmCompleter GoToDefinitionElseDeclaration<CR>
 " }
 " --- Syntastic {
