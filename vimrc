@@ -50,6 +50,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/LanguageTool'
 " Local vimrc
 Plugin 'embear/vim-localvimrc'
+"Indent Guides
+Plugin 'nathanaelkane/vim-indent-guides'
 " YouCompleteMe
 "Plugin 'Valloric/YouCompleteMe'
 " fugitive
