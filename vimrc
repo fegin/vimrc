@@ -50,10 +50,12 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/LanguageTool'
 " Local vimrc
 Plugin 'embear/vim-localvimrc'
+"Indent Guides
+Plugin 'nathanaelkane/vim-indent-guides'
 " YouCompleteMe
-if ! hostname =~ "beaker" && hostname =~ "geeker"
-    Plugin 'Valloric/YouCompleteMe'
-endif
+" if ! hostname =~ "beaker" && hostname =~ "geeker"
+Plugin 'Valloric/YouCompleteMe'
+" endif
 " fugitive
 " Plugin 'tpope/vim-fugitive'
 
